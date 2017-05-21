@@ -4,5 +4,5 @@ module.exports = {
     css: [
       'sidebar-footer.css'
     ]
-  },
+  }
 };
