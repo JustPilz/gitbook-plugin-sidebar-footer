@@ -23,31 +23,38 @@ require(['gitbook', 'jQuery'], function (gitbook, $) {
   };
 
 
-  function initializePlugin(config) {
-    pluginConfig = config['sidebar-footer'];
-
-    var online = null;
+function getOnline() {
 
     getJSON('https://mafia2-online.com/api/v1/server',
     function(err, data) {
+        var online = null;
         if (err != null) {
             return online = "N/A";
         } else {
             // see every area, create option element, append it to select
             data.forEach(function(server) {
-                if(server.id == "37") {
+                if(server.ip == "139.59.142.46") {
                   return online = server.lastPlayersCount;
                 }
             });
         }
+        document.getElementById("online").innerHTML = online;
     });
+}
 
 
+  function initializePlugin(config) {
+    pluginConfig = config['sidebar-footer'];
 
     var text = pluginConfig.text;
-    
+
     sidebarFooter
-      = '<div class="sidebar-footer">Online: ' + online + '<br>'+ text +'</div>'
+      = '<div class="sidebar-footer">'
+        + '<div class="line">Игроков онлайн: <span id="online" class="online"></span></div>'
+        + '<div class="line">Сервер: <span id="servername">Empire Bay Times</span></div>'
+        + '<div class="line">IP: <span id="serverip">139.59.142.46</span> | Порт: <span id="serverport">7777</span></div>'
+       // + '<p>'+text+'<p>'
+      + '</div>'
       ;
 
     /*
@@ -65,7 +72,8 @@ require(['gitbook', 'jQuery'], function (gitbook, $) {
 
   gitbook.events.bind('start', function (e, config) {
     initializePlugin(config);
-
+    getOnline();
+    setInterval(getOnline, 60000);
 /*
     gitbook.toolbar.createButton({
       icon: 'fa fa-github',
@@ -81,6 +89,7 @@ require(['gitbook', 'jQuery'], function (gitbook, $) {
   gitbook.events.bind('page.change', function() {
     var summaryUl = $('.book .book-summary .summary');
     summaryUl.append(sidebarFooter);
+    getOnline();
   });
 });
 
