@@ -33,8 +33,7 @@
 
 .color-theme-2 .line {
     width: 100%;
-    /*background-color: #2D3143;*/
-        background-color: #FF0000;
+    background-color: #2D3143;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
