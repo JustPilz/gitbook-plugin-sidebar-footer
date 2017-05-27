@@ -87,7 +87,7 @@ function getOnline() {
   });
 
   gitbook.events.bind('page.change', function() {
-    var summaryUl = $('.book .book-summary .summary');
+    var summaryUl = $('.book .book-summary');
     summaryUl.append(sidebarFooter);
     getOnline();
   });

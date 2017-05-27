@@ -1,6 +1,5 @@
 .sidebar-footer {
   min-height: 103px;
-  position: absolute;
   bottom: 0;
   height: 103px;
   width: 100%
@@ -34,7 +33,8 @@
 
 .color-theme-2 .line {
     width: 100%;
-    background-color: #2D3143;
+    /*background-color: #2D3143;*/
+        background-color: #FF0000;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -52,3 +52,11 @@
     height: 30px;
     line-height: 30px;
 }
+
+.book-summary-wrap {
+    position: relative;
+    /* 100% - ( height search + height sidebar-footer ) */
+    height: calc(100% - (103px + 61px));
+    overflow-y: auto;
+}
+

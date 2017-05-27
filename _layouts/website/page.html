@@ -1,0 +1,24 @@
+{% extends template.self %}
+
+{% block book_sidebar %}
+
+<!-- Place above search input -->
+
+    {% block search_input %}{% endblock %}
+    <div id="book-search-input" role="search">
+      <input type="text" placeholder="{{ 'SEARCH_PLACEHOLDER'|t }}" />
+    </div>
+
+<!-- Place under search input -->
+
+<div class="book-summary-wrap">
+
+<!-- First place in nav menu -->
+
+    {% block book_summary %}
+        <nav role="navigation">
+        {% include "website/summary.html" %}
+        </nav>
+    {% endblock %}
+</div>
+{% endblock %}
