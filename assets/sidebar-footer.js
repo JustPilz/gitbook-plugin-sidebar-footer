@@ -51,7 +51,7 @@ function getOnline() {
     sidebarFooter
       = '<div class="sidebar-footer">'
         //+ '<div class="line">Игроков онлайн: <span id="online" class="online"></span></div>'
-        + '<div class="line">Сервер: <span id="servername">Empire Bay Times</span></div>'
+        + '<div class="line">Сервер: <span id="servername">Night City RolePlay</span></div>'
         + '<div class="line">IP: <span id="serverip">139.59.142.46</span> | Порт: <span id="serverport">7777</span></div>'
        // + '<p>'+text+'<p>'
       + '</div>'
