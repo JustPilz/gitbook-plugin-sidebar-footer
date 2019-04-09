@@ -1,7 +1,7 @@
 .sidebar-footer {
-  min-height: 103px;
+  min-height: 64px;
   bottom: 0;
-  height: 103px;
+  height: 64px;
   width: 100%
 }
 
@@ -55,7 +55,7 @@
 .book-summary-wrap {
     position: relative;
     /* 100% - ( height search + height sidebar-footer ) */
-    height: calc(100% - (103px + 61px));
+    height: calc(100% - (64px + 61px));
     overflow-y: auto;
 }
 
